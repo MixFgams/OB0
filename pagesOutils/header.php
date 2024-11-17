@@ -4,7 +4,7 @@
         <a href="index.php">Accueil</a>
         <a href="creationArticle.php">Communauté</a>
         <a href="aPropos.php">Catalogue</a>
-        <a href="profile.php">À propos</a>
+        <a href="profil.php">À propos</a>
 
         <!--A mettre dans le cas ou l'utilisateur n'est pas connecté-->
         <a href="connexion.php">connexion</a>
