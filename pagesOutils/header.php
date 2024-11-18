@@ -10,7 +10,7 @@
         <a href="connexion.php">connexion</a>
 
         <!--A mettre seulement si l'utilisateur est connecté-->
-        <a href="profile.php">Votre Profile</a>
+        <a href="profile.php">Votre Profil</a>
 
     </nav>
 </header>
