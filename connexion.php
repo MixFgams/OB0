@@ -8,17 +8,19 @@
         <script src="script.js"></script>
     </head>
 
-    <body>
-        <main id="connexion">
+    <body id="connexion-body">
+        <main id="connexion-main">
             <form method="post">
 
                 <div id="connexion-form">
-                    <label>Entrez vos identifiants :</label>
+                    <h1>Connectez-vous à votre compte</h1>
                     
                     <!-- Choix entre pseudo et email-->
                     <div>
+
                         <button type="button" onclick="connexionPseudo()">Pseudo</button>
                         <button type="button" onclick="connexionEmail()">Email</button>
+
                     </div>
 
                     <!-- entrée par pseudo -->
@@ -34,11 +36,14 @@
                 </div>
 
                 <div id="inscription-form" style="display: none;">
-                    <label>Entrez vos identifiants :</label>
+                    <h1>Créer un compte</h1>
+                    
                     <input type="text" name="inscription-pseudo" id="inscription-pseudo" placeholder="Pseudo" minlength="4" required>
                     <input type="email" name="inscription-mail" id="inscription-mail" placeholder="Email" minlength="4" required>
                     <input type="password" name="inscription-mp" id="inscription-mp" placeholder="Mot de passe" minlength="4" maxlength="20" required>
+                    
                     <input type="submit" value="Inscription">
+
                     <button type="button" onclick="montrerConnexion()">Vous avez déjà un compte ?</button>
                 </div>
 

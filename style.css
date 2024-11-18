@@ -197,4 +197,8 @@ input:focus, textarea:focus {
 
 /*---------------------Connexion / Inscription---------------------*/
 
+#connexion-body{
+    background-color: #212A45;
+}
+
 /*Foudra penser à une version responsive (ou version mobile et ecran moyen)*/
