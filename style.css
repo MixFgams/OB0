@@ -196,9 +196,26 @@ input:focus, textarea:focus {
 }
 
 /*---------------------Connexion / Inscription---------------------*/
-
-#connexion-body{
-    background-color: #212A45;
-}
+/*PROTOTYPE, LE FLEX DIRECTION VEUT PAS MARCHE EN ECRAN 1080PX !!!!!!!!!!!!!!!*/
+#inscription-form{
+    display: flex;
+    flex-direction: column;
+}   
 
 /*Foudra penser à une version responsive (ou version mobile et ecran moyen)*/
+
+@media (max-width: 768px) {
+    main {
+        width: 90%;
+    }
+
+    header nav, footer nav {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    input, button {
+        width: 100%;
+    }
+}
+
