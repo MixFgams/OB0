@@ -10,8 +10,7 @@ body {
 main{
     flex-grow: 1;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: column; 
     margin: 0 auto;
     width: 70%;
     font-family: "Century Gothic";
@@ -204,6 +203,8 @@ input:focus, textarea:focus {
 
 /*Foudra penser à une version responsive (ou version mobile et ecran moyen)*/
 
+
+/* LE MINI MINI MINIMUM*/
 @media (max-width: 768px) {
     main {
         width: 90%;

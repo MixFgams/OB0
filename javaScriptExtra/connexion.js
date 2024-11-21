@@ -2,12 +2,15 @@
 function montrerConnexion() {
     document.getElementById("connexion-form").style.display = "block";
     document.getElementById("inscription-form").style.display = "none";
+    document.querySelector("h1").textContent = "Connexion";
 }
 
 // Affiche le formulaire d'inscription
 function montrerInscription() {
     document.getElementById("inscription-form").style.display = "block";
     document.getElementById("connexion-form").style.display = "none";
+    console.log('montrerInscription');
+    document.querySelector("h1").textContent = "Inscription";
 }
 
 // Affiche les champs pour se connecter avec un pseudo
