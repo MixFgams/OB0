@@ -15,7 +15,7 @@
                 <p>Nom</p>
                 <p>date</p>
                 <p>niveau</p>
-                <img src="pagesOutils\pdp.jpg" alt="photo de l utilisateur">
+                <img src="img\pdp.jpg" alt="photo de l utilisateur">
                 </section>
             </div>
 

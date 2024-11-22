@@ -1,13 +1,13 @@
 // Affiche le formulaire de connexion
 function montrerConnexion() {
-    document.getElementById("connexion-form").style.display = "block";
+    document.getElementById("connexion-form").style.display = "flex";
     document.getElementById("inscription-form").style.display = "none";
     document.querySelector("h1").textContent = "Connexion";
 }
 
 // Affiche le formulaire d'inscription
 function montrerInscription() {
-    document.getElementById("inscription-form").style.display = "block";
+    document.getElementById("inscription-form").style.display = "flex";
     document.getElementById("connexion-form").style.display = "none";
     console.log('montrerInscription');
     document.querySelector("h1").textContent = "Inscription";
