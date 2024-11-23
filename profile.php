@@ -3,6 +3,7 @@
     <head>
         <link rel="icon" href="img/obLogo.png   " type="image/x-icon">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="cssExtraPages/profiles.css">
         <script src="script.js"></script>
     </head>
 
@@ -19,18 +20,21 @@
                 </section>
             </div>
 
+
+
             <div id="collection">
                 <section>
                 <h2>Collection</h2>
 
-                    <h3>Aventure</h3>
+                    <h3 id="aventure">Aventure</h3>
                 </section>
             </div>
 
             <div id="film">
                 <section>
                 <h2>Film</h2>
-                <img src="" alt="image film">
+               <a href="pageContenu.php"> <img src="img/naruto.jpg" alt="image film"></a>
+
                 </section>
             </div>
 
@@ -38,7 +42,7 @@
                 <section>
                 <h2>serie</h2>
 
-                    <img src="" alt="image serie">
+                    <a href="pageContenu.php"><img src="img/twd.webp" alt="image serie"></a>
                 </section>
 
             </div>
@@ -51,6 +55,7 @@
                 </section>
 
             </div>
+
 
 
             
