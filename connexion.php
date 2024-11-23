@@ -22,7 +22,7 @@
                         <!-- Choix entre pseudo et email-->
                         <div>
 
-                            <button type="button" onclick="connexionPseudo()">Pseudo</button>
+                            <button type="button" onclick="connexionPseudo()" class="connexion-selection-button">Pseudo</button>
                             <button type="button" onclick="connexionEmail()">Email</button>
 
                         </div>

@@ -195,11 +195,17 @@ input:focus, textarea:focus {
 }
 
 /*---------------------Connexion / Inscription---------------------*/
-/*PROTOTYPE, LE FLEX DIRECTION VEUT PAS MARCHE EN ECRAN 1080PX !!!!!!!!!!!!!!!*/
-#inscription-form{
+/*c'etait un conflit avec le javasript, easy peasy*/
+#inscription-form, #connexion-form{
     display: flex;
     flex-direction: column;
 }   
+
+#connexion-selection-button{
+    background-color: #212A45;
+    padding-left: 2em;
+    padding-right: 2em;
+}
 
 /*Foudra penser à une version responsive (ou version mobile et ecran moyen)*/
 
