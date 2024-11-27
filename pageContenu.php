@@ -10,7 +10,54 @@
         <?php include 'pagesOutils/header.php'?>
 
         <main>
-            
+            <section id="cadre-contenu">
+                <div id="contenu">
+                    <div id="info-contenu">
+                        <?php //TODO remplacer les placeholders?>
+                        <h3>Titre</h3>
+                        <p id="titre"></p>
+                        
+                        <h3>Type de Contenu</h3>
+                        <p id="type-contenu"></p>
+
+                        <h3>Date de Sortie</h3>
+                        <p id="date-sortie"></p>
+
+                        <h3>Auteur</h3>
+                        <p id="auteur"></p>
+
+                        <h3>Nombre total de volumes</h3>
+                        <p id="nb-volumes"></p>
+                    </div>
+                    <img src="./img/AizenBackground.png" alt="chouine" class="image-contenu">
+                </div>
+                <div id="description-grid">
+                    <div class="blue-box" id="collection">
+                        <div id="checkbox-grid">
+                            <input type="checkbox" id="deja-vu">
+                            <p>Déjà Vu</p>
+                        </div>
+                        <p>Ajouter à une collection</p>
+                        <button type="button" id="ajouter-collection">
+                            AJOUTER
+                        </button>
+                    </div>
+                    <div id="description-div">
+                        <h3>Description</h3>
+                        <p id="description">test test test</p>
+                    </div>
+                </div>
+                <h3>Commentaires</h3>
+                <div id="Commentaires">
+                    <div class="liste-commentaire">à remplir</div>
+                </div>
+                <a href="" class="texte-page-contenue">Voir Plus +</a>
+            </div>
+            </section>
+
+            <section id="volumes">
+                <h2>Volumes</h2>
+            </section>
         </main>
     
         <?php include 'pagesOutils/footer.php'?>

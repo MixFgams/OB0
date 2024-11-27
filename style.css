@@ -53,7 +53,7 @@ main{
 
 /*-------------------Styles pour Header et Footer-------------------*/
 header, footer {
-    background-color: lightgray;
+    background-color: #BECACF;
     color: black;
     padding: 5px;
     text-align: center;
@@ -125,7 +125,7 @@ h2:hover {
 section {
     margin: 1em;
     padding: 15px;
-    background-color: #f9f9f9;
+    background-color: #D9D9D9;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -210,6 +210,60 @@ input:focus, textarea:focus {
 /*Foudra penser à une version responsive (ou version mobile et ecran moyen)*/
 
 
+
+/*--------------------- Page Contenu -----------------------------*/
+
+#cadre-contenu {
+    margin-left : 5% ;
+    margin-right : 5% ;
+}
+
+#contenu {
+    display : grid ;
+    grid-template-columns: 50% 50% ;
+}
+
+#cadre-contenu h3 {
+    text-align : right ;
+    color : #9B1C31 ;
+}
+
+#contenu img {
+    max-height : 100% ;
+    max-width : 100% ;
+    padding : 5px ;
+    object-fit: cover ;
+}
+
+#description-grid {
+    display:flex ;
+    flex-direction: row ;
+}
+
+#description-grid > * {
+    margin : 10px ;
+}
+
+.blue-box {
+    background-color: #BECACF ;
+    border-radius : 10px ;
+    padding : 5px ;
+    font-weight : bold ;
+}
+
+.image-contenu {
+    margin : auto ;
+    display : block ;
+}
+
+#checkbox-grid {
+    display : flex ;
+    flex-direction: row ;
+}
+
+
+/*Foudra penser à une version responsive (ou version mobile et ecran moyen)*/
+
 /* LE MINI MINI MINIMUM*/
 @media (max-width: 768px) {
     main {
@@ -225,4 +279,3 @@ input:focus, textarea:focus {
         width: 100%;
     }
 }
-
