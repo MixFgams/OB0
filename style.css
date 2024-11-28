@@ -7,11 +7,10 @@ body {
     font-family: 'Century Gothic', sans-serif;
 }
 
-main:not(#connexion){
+main{
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     margin: 0 auto;
     width: 70%;
     font-family: "Century Gothic";
@@ -54,7 +53,7 @@ main:not(#connexion){
 
 /*-------------------Styles pour Header et Footer-------------------*/
 header, footer {
-    background-color: lightgray;
+    background-color: #BECACF;
     color: black;
     padding: 5px;
     text-align: center;
@@ -126,7 +125,7 @@ h2:hover {
 section {
     margin: 1em;
     padding: 15px;
-    background-color: #f9f9f9;
+    background-color: #D9D9D9;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -196,5 +195,136 @@ input:focus, textarea:focus {
 }
 
 /*---------------------Connexion / Inscription---------------------*/
+/*c'etait un conflit avec le javasript, easy peasy*/
+#inscription-form, #connexion-form{
+    display: flex;
+    flex-direction: column;
+}   
+
+#connexion-selection-button{
+    background-color: #212A45;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+/*Foudra penser à une version responsive (ou version mobile et ecran moyen)*/
+
+/*--------------------- Page Contenu -----------------------------*/
+
+#cadre-contenu {
+    margin-left : 5% ;
+    margin-right : 5% ;
+}
+
+#contenu {
+    display : grid ;
+    grid-template-columns: 50% 50% ;
+}
+
+#cadre-contenu h3 {
+    text-align : right ;
+    color : #9B1C31 ;
+}
+
+#contenu img {
+    max-height : 100% ;
+    max-width : 100% ;
+    padding : 5px ;
+    object-fit: cover ;
+}
+
+#description-grid {
+    display:flex ;
+    flex-direction: row ;
+}
+
+#description-grid > * {
+    margin : 10px ;
+}
+
+.blue-box {
+    background-color: #BECACF ;
+    border-radius : 10px ;
+    padding : 5px ;
+    font-weight : bold ;
+}
+
+.image-contenu {
+    margin : auto ;
+    display : block ;
+}
+
+#checkbox-grid {
+    display : flex ;
+    flex-direction: row ;
+}
+
 
 /*Foudra penser à une version responsive (ou version mobile et ecran moyen)*/
+
+/* LE MINI MINI MINIMUM*/
+@media (max-width: 768px) {
+    main {
+        width: 90%;
+    }
+
+    header nav, footer nav {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    input, button {
+        width: 100%;
+    }
+}
+
+/*----------------------     Index      ----------------------*/
+.SectionIndex {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: 1000px; /* Limite la largeur pour un affichage centré */
+}
+
+.SectionIndex button {
+    align-self: flex-end; /* Place le bouton à droite */
+    margin-top: auto; /* Assure qu'il reste en bas */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.forums-container {
+    display: grid; /* Active la grille */
+    grid-template-columns: repeat(2, minmax(300px, 1fr)); /* 2 colonnes max */
+    gap: 20px; /* Espace entre les cartes */
+}
+
+.forum-item {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border: solid black 1px;
+}
+
+.forum-item img {
+    width: 40%;
+    border-radius: 8px;
+}
+
+.forum-description {
+    flex: 1;
+}
+
+.forums-container .forum-item:nth-child(n+3) {
+    display: none;
+}
+
+
+
+
