@@ -11,15 +11,56 @@
         <main>
             <section class="SectionIndex">
                 <h2>Forums populaires</h2>
-                <div>
-                    <img src="" alt="Image du forum">
-                    <h3>Titre du forum</h3>
-                    <p>Créateur du forum</p>
-                    <p>Date de création</p>
-                    <p>Description : Lorem Ipsum dolor sit amet</p>
+                <div class="forums-container">
+                    <div class="forum-item">
+                        <img src="img/afficheFilm.jpg" alt="Image du forum">
+                        <div class="forum-description">
+                            <h3>Titre du forum</h3>
+                            <p>Créateur du forum</p>
+                            <p>Date de création</p>
+                            <p>Description : Lorem Ipsum dolor sit amet</p>
+                        </div>
+                    </div>
+                    <div class="forum-item">
+                        <img src="img/afficheFilm.jpg" alt="Image du forum">
+                        <div class="forum-description">
+                            <h3>Titre du forum</h3>
+                            <p>Créateur du forum</p>
+                            <p>Date de création</p>
+                            <p>Description : Lorem Ipsum dolor sit amet</p>
+                        </div>
+                    </div>
+                    <div class="forum-item">
+                        <img src="img/afficheFilm.jpg" alt="Image du forum">
+                        <div class="forum-description">
+                            <h3>Titre du forum</h3>
+                            <p>Créateur du forum</p>
+                            <p>Date de création</p>
+                            <p>Description : Lorem Ipsum dolor sit amet</p>
+                        </div>
+                    </div>
+                    <div class="forum-item">
+                        <img src="img/afficheFilm.jpg" alt="Image du forum">
+                        <div class="forum-description">
+                            <h3>Titre du forum</h3>
+                            <p>Créateur du forum</p>
+                            <p>Date de création</p>
+                            <p>Description : Lorem Ipsum dolor sit amet</p>
+                        </div>
+                    </div>
+                    <div class="forum-item">
+                        <img src="img/afficheFilm.jpg" alt="Image du forum">
+                        <div class="forum-description">
+                            <h3>Titre du forum</h3>
+                            <p>Créateur du forum</p>
+                            <p>Date de création</p>
+                            <p>Description : Lorem Ipsum dolor sit amet</p>
+                        </div>
+                    </div>
                 </div>
-                <button>Voir plus + (Faut au moins 2 forum affiché ou plus)</button>
+                <button id="showMoreBtn">Voir plus +</button>
             </section>
+
 
             <section class="SectionIndex">
                 <h2>Collections</h2>
