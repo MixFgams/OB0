@@ -10,7 +10,7 @@ body {
 main{
     flex-grow: 1;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     margin: 0 auto;
     width: 70%;
     font-family: "Century Gothic";
@@ -206,10 +206,7 @@ input:focus, textarea:focus {
     padding-left: 2em;
     padding-right: 2em;
 }
-
 /*Foudra penser à une version responsive (ou version mobile et ecran moyen)*/
-
-
 
 /*--------------------- Page Contenu -----------------------------*/
 
@@ -279,3 +276,55 @@ input:focus, textarea:focus {
         width: 100%;
     }
 }
+
+/*----------------------     Index      ----------------------*/
+.SectionIndex {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: 1000px; /* Limite la largeur pour un affichage centré */
+}
+
+.SectionIndex button {
+    align-self: flex-end; /* Place le bouton à droite */
+    margin-top: auto; /* Assure qu'il reste en bas */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.forums-container {
+    display: grid; /* Active la grille */
+    grid-template-columns: repeat(2, minmax(300px, 1fr)); /* 2 colonnes max */
+    gap: 20px; /* Espace entre les cartes */
+}
+
+.forum-item {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border: solid black 1px;
+}
+
+.forum-item img {
+    width: 40%;
+    border-radius: 8px;
+}
+
+.forum-description {
+    flex: 1;
+}
+
+.forums-container .forum-item:nth-child(n+3) {
+    display: none;
+}
+
+
+
+

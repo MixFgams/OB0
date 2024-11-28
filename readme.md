@@ -1,9 +1,9 @@
-# Version 1.1
+# Version 1.0
 
-Ce qui est prévu pour cette branche est de completer l'initialisation basique pour avoir un squelette solide pour pouvoir commencer à coder et se repartir les taches.
+Initialisation basique du site web avec : 
+  - Ajout du header/footer
+  - Ajout des fonts pour garantir que l'utilisateur aura les fonts
+  - Optimisation legere en creant le dossier pagesOutils avec les parties PHP (ou autre) repetitives et presentes dans plusieurs pages
+> Bing Chiling !!!
 
-Fonctionnalités clés :
-    - Principalement de faire le squellette (hors PHP)
-    - À venir ...
-
-> Bing Chilling V1.1 !!!    
+---
