@@ -12,11 +12,28 @@
 
         <main>
             <div id="user">
+
                 <section>
-                <p>Nom</p>
-                <p>date</p>
-                <p>niveau</p>
+
                 <img src="img\pdp.jpg" alt="photo de l utilisateur">
+                    <div id="detail-user">
+                <h3>Nom</h3>
+
+                            <p>date</p>
+
+
+                            <p>niveau</p>
+
+
+
+
+                        <div id="progress-container">
+                            <div id="progress-bar"></div>
+                        </div>
+
+                    </div>
+
+
                 </section>
             </div>
 
