@@ -1,6 +1,59 @@
-img{
-    width: 50px;
-    height: 50px;
+#user{
+    display: flex;
+}
+#user section{
+    display:flex;
+
+
+}
+#user section h3:nth-child(1){
+    text-align:left;
+    font-size: 30px;
+}
+#user section img:first-child{
+    width: 150px;
+    height: 150px;
+}
+
+/* Conteneur de la barre de progression */
+#progress-container {
+    width: 100%; /* Largeur totale du conteneur */
+    height: 20px; /* Hauteur de la barre */
+    background-color: #e0e0e0; /* Couleur de fond */
+    border-radius: 10px; /* Coins arrondis */
+    overflow: hidden; /* Masque les débordements */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optionnel : Ajoute une ombre */
+    margin-top: 10px; /* Espacement en haut */
+}
+
+/* Barre de progression */
+#progress-bar {
+    width: 70%; /* Remplacez par le pourcentage de progression */
+    height: 100%;
+    background-color: #4caf50; /* Couleur de progression */
+    border-radius: 10px 0 0 10px; /* Coins arrondis à gauche uniquement */
+    transition: width 0.3s ease; /* Ajoute une animation fluide */
+}
+
+
+
+
+
+
+
+
+#user section p:nth-child(2),
+#user section p:nth-child(3) {
+    background-color: #e6e4fa;
+    color: #5b4db8;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 15px;
+    margin: 2px 0;
+    display: inline-block;
+
+
 }
 
 div img{
