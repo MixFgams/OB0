@@ -232,10 +232,6 @@ input:focus, textarea:focus {
     object-fit: cover ;
 }
 
-#description-grid {
-    display:flex ;
-    flex-direction: row ;
-}
 
 #description-grid > * {
     margin : 10px ;
@@ -253,11 +249,31 @@ input:focus, textarea:focus {
     display : block ;
 }
 
-#checkbox-grid {
-    display : flex ;
+#description-grid, #checkbox-grid, #liste-commentaire, .commentaire-header {
+    display:flex ;
+    flex-wrap: wrap ;
     flex-direction: row ;
 }
 
+.pp-commentaire {
+    border-radius: 100% ;
+    max-height: 48px;
+    max-width: 48px;
+}
+
+#liste-commentaire > * {
+    width : 20% ;
+    height : 30% ;
+    margin : 10px ;
+}
+
+.commentaire-header > *{
+    margin : 2px ;
+}
+
+.commentaire-text {
+    color : black ;
+}
 
 /*Foudra penser à une version responsive (ou version mobile et ecran moyen)*/
 

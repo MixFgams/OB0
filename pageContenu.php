@@ -49,7 +49,30 @@
                 </div>
                 <h3>Commentaires</h3>
                 <div id="Commentaires">
-                    <div class="liste-commentaire">à remplir</div>
+                    <div id="liste-commentaire">
+                        <div class="blue-box">
+                            <div class="commentaire-header">
+                                <img src="./img/pdp.jpg"/ class="pp-commentaire">
+                                <a href="">
+                                    <p>xXYutaFanXx</p>
+                                </a>
+                            </div>
+                            <p class="commentaire-text">
+                                bonjour
+                            </p>
+                        </div>
+                        <div class="blue-box">
+                            <div class="commentaire-header">
+                                <img src="./img/pdp.jpg"/ class="pp-commentaire">
+                                <a href="">
+                                    <p>AigriDeService</p>
+                                </a>
+                            </div>
+                            <p class="commentaire-text">
+                                Il s'agirait peut-être de savoir coder
+                            </p>
+                        </div>
+                    </div>
                 </div>
                 <a href="" class="texte-page-contenue">Voir Plus +</a>
             </div>
