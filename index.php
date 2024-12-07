@@ -64,19 +64,25 @@
 
             <section class="SectionIndex">
                 <h2>Collections</h2>
-                <div class="Collection">
-                    <h3>Nom de la collection</h3>
+                <div class="scrollable-container">
+                    <button class="scroll-button left" aria-label="Défiler à gauche">◀</button>
+                    <div id="ListeCollection" class="scrollable-content">
+                        <div class="Collection"><h3>Aventure</h3></div>
+                        <div class="Collection"><h3>Aventure</h3></div>
+                        <div class="Collection"><h3>Aventure</h3></div>
+                        <div class="Collection"><h3>Aventure</h3></div>
+                        <div class="Collection"><h3>Aventure</h3></div>
+                    </div>
+                    <button class="scroll-button right" aria-label="Défiler à droite">▶</button>
                 </div>
-                <div id="CreerCollection">
-                    <h3>+ Créer une collection</h3>
-                </div>
+                <button id="showMoreBtn">+ Créer une collection</button>
             </section>
 
             <section class="SectionIndex">
                 <h2>Recommandations personnalisées</h2>
-                <div class="recommendations-container">
+                <div class="scrollable-container">
                     <button class="scroll-button left" aria-label="Défiler à gauche">◀</button>
-                    <div class="recommendations-scrollable">
+                    <div class="recommendations-scrollable scrollable-content">
                         <img src="img/afficheFilm.jpg" alt="Image de la recommandation">
                         <img src="img/afficheFilm.jpg" alt="Image de la recommandation">
                         <img src="img/afficheFilm.jpg" alt="Image de la recommandation">
@@ -89,10 +95,21 @@
                 </div>
             </section>
 
+
             <section class="SectionIndex">
                 <h2>Séries en feu</h2>
-                <div>
-                    <img src="" alt="Image de la recommandation">
+                <div class="scrollable-container">
+                    <button class="scroll-button left" aria-label="Défiler à gauche">◀</button>
+                    <div class="recommendations-scrollable scrollable-content">
+                        <img src="img/afficheFilm.jpg" alt="Image de la recommandation">
+                        <img src="img/afficheFilm.jpg" alt="Image de la recommandation">
+                        <img src="img/afficheFilm.jpg" alt="Image de la recommandation">
+                        <img src="img/afficheFilm.jpg" alt="Image de la recommandation">
+                        <img src="img/afficheFilm.jpg" alt="Image de la recommandation">
+                        <img src="img/afficheFilm.jpg" alt="Image de la recommandation">
+                        <img src="img/afficheFilm.jpg" alt="Image de la recommandation">
+                    </div>
+                    <button class="scroll-button right" aria-label="Défiler à droite">▶</button>
                 </div>
             </section>
         </main>

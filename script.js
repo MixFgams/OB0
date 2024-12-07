@@ -23,19 +23,41 @@ function toggleShowMore(button, forums) {
 }
 
 function initScrollButtons() {
-    const container = document.querySelector('.recommendations-scrollable');
-    const leftButton = document.querySelector('.scroll-button.left');
-    const rightButton = document.querySelector('.scroll-button.right');
+    // Sélection de tous les conteneurs défilables
+    const containers = document.querySelectorAll('.scrollable-container');
 
-    const scrollAmount = 300;
+    containers.forEach(container => {
+        // Récupère les boutons et le conteneur défilable associés
+        const leftButton = container.querySelector('.scroll-button.left');
+        const rightButton = container.querySelector('.scroll-button.right');
+        const scrollableContent = container.querySelector('.scrollable-content');
 
-    leftButton.addEventListener("click", function () {
-        container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-    });
+        if (!leftButton || !rightButton || !scrollableContent) {
+            console.warn('Boutons ou contenu défilable manquants dans un conteneur.');
+            return;
+        }
 
-    rightButton.addEventListener("click", function () {
-        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        console.log("Conteneur : ", container);
+        console.log("Bouton gauche : ", leftButton);
+        console.log("Bouton droit : ", rightButton);
+        console.log("Contenu défilable : ", scrollableContent);
+
+
+        // Définit la quantité de défilement
+        const scrollAmount = 300;
+
+        // Événements pour les boutons
+        leftButton.addEventListener("click", function () {
+            scrollableContent.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+
+        rightButton.addEventListener("click", function () {
+            scrollableContent.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
     });
 }
+
+
+
 
 
