@@ -294,6 +294,7 @@ input:focus, textarea:focus {
 }
 
 /*----------------------     Index      ----------------------*/
+/*----------------------     Index      ----------------------*/
 .SectionIndex {
     padding: 20px;
     display: flex;
@@ -340,6 +341,51 @@ input:focus, textarea:focus {
 .forums-container .forum-item:nth-child(n+3) {
     display: none;
 }
+.recommendations-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.recommendations-scrollable {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    gap: 15px;
+}
+
+.recommendations-scrollable img {
+    width: 200px;
+    height: 300px;
+    border-radius: 8px;
+}
+
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5); /* Bouton semi-transparent */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.scroll-button.left {
+    left: 10px;
+}
+
+.scroll-button.right {
+    right: 10px;
+}
+
+
 
 
 

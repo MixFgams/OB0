@@ -73,9 +73,19 @@
             </section>
 
             <section class="SectionIndex">
-                <h2>Recommandations personnalisés</h2>
-                <div>
-                    <img src="" alt="Image de la recommandation">
+                <h2>Recommandations personnalisées</h2>
+                <div class="recommendations-container">
+                    <button class="scroll-button left" aria-label="Défiler à gauche">◀</button>
+                    <div class="recommendations-scrollable">
+                        <img src="img/afficheFilm.jpg" alt="Image de la recommandation">
+                        <img src="img/afficheFilm.jpg" alt="Image de la recommandation">
+                        <img src="img/afficheFilm.jpg" alt="Image de la recommandation">
+                        <img src="img/afficheFilm.jpg" alt="Image de la recommandation">
+                        <img src="img/afficheFilm.jpg" alt="Image de la recommandation">
+                        <img src="img/afficheFilm.jpg" alt="Image de la recommandation">
+                        <img src="img/afficheFilm.jpg" alt="Image de la recommandation">
+                    </div>
+                    <button class="scroll-button right" aria-label="Défiler à droite">▶</button>
                 </div>
             </section>
 
