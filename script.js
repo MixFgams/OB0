@@ -57,6 +57,22 @@ function initScrollButtons() {
     });
 }
 
+document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('click', () => {
+        window.location.href = 'profile.php'; // Redirection
+    });
+});
+
+document.querySelector('#createCollection').addEventListener('click', () => {
+    // Crée un nouvel élément <h1>
+    console.log("click");
+    const form = document.createElement();
+    const collectionContainer = document.querySelector('#ListeCollection');
+    collectionContainer.appendChild(form);
+});
+
+
+
 
 
 

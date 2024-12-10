@@ -3,7 +3,6 @@
     <head>
         <link rel="icon" src="img/obLogo.png" type="image/x-icon">
         <link rel="stylesheet" href="style.css">
-        <script src="script.js"></script>
     </head>
 
     <body>
@@ -75,7 +74,7 @@
                     </div>
                     <button class="scroll-button right" aria-label="Défiler à droite">▶</button>
                 </div>
-                <button id="showMoreBtn">+ Créer une collection</button>
+                <button id="createCollection">+ Créer une collection</button>
             </section>
 
             <section class="SectionIndex">
@@ -113,7 +112,8 @@
                 </div>
             </section>
         </main>
-    
+        <script src="script.js"></script>
+
         <?php include 'pagesOutils/footer.php'?>
     </body>
 </html>

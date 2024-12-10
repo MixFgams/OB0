@@ -2,7 +2,7 @@
     <nav class="header-nav">
         <a href="index.php"><img src="img/obLogo.png" href="../index.php" alt="Logo OB"></a>
         <a href="index.php">Accueil</a>
-        <a href="creationArticle.php">Communauté</a>
+        <a href="communaute.php">Communauté</a>
         <a href="pageContenu.php">Catalogue</a>
         <a href="aPropos.php">À propos</a>
 

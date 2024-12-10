@@ -82,6 +82,7 @@
                 <h2>Volumes</h2>
             </section>
         </main>
+        <script src="script.js"></script>
     
         <?php include 'pagesOutils/footer.php'?>
     </body>
