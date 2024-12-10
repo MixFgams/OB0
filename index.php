@@ -39,6 +39,7 @@
                             <p>Description : Lorem Ipsum dolor sit amet</p>
                         </div>
                     </div>
+
                     <div class="forum-item">
                         <img src="img/afficheFilm.jpg" alt="Image du forum">
                         <div class="forum-description">
