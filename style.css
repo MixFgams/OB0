@@ -294,18 +294,18 @@ input:focus, textarea:focus {
 }
 
 /*----------------------     Index      ----------------------*/
-/*----------------------     Index      ----------------------*/
+
 .SectionIndex {
     padding: 20px;
     display: flex;
     flex-direction: column;
     position: relative;
-    max-width: 1000px; /* Limite la largeur pour un affichage centré */
+    max-width: 1000px;
 }
 
 .SectionIndex button {
-    align-self: flex-end; /* Place le bouton à droite */
-    margin-top: auto; /* Assure qu'il reste en bas */
+    align-self: flex-end;
+    margin-top: auto;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
@@ -313,9 +313,9 @@ input:focus, textarea:focus {
 }
 
 .forums-container {
-    display: grid; /* Active la grille */
-    grid-template-columns: repeat(2, minmax(300px, 1fr)); /* 2 colonnes max */
-    gap: 20px; /* Espace entre les cartes */
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    gap: 20px;
 }
 
 .forum-item {
@@ -356,7 +356,7 @@ input:focus, textarea:focus {
 }
 
 .recommendations-scrollable img {
-    width: 40%;
+    width: 20%;
     border-radius: 8px;
 }
 
@@ -366,7 +366,7 @@ input:focus, textarea:focus {
     transform: translateY(-50%);
     width: 40px;
     height: 40px;
-    background-color: rgba(0, 0, 0, 0.5); /* Bouton semi-transparent */
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
     border-radius: 50%;
@@ -385,7 +385,6 @@ input:focus, textarea:focus {
     right: 10px;
 }
 
-/* Partie des collection */
 #ListeCollection {
     display: flex;
     flex-wrap: nowrap;
@@ -406,6 +405,62 @@ input:focus, textarea:focus {
     min-width: 150px;
     max-width: 200px;
 }
+
+/*------------------Profil-------------------------*/
+
+h2:hover {
+    cursor: pointer;
+}
+
+#progress-container {
+    width: 100%;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+
+#progress-bar {
+    width: 70%;
+    height: 100%;
+    background-color: #4caf50;
+    border-radius: 10px 0 0 10px;
+    transition: width 0.3s ease;
+}
+
+
+#user{
+    display: flex;
+}
+
+#user section{
+    display:flex;
+}
+
+#user section h3:nth-child(1){
+    text-align:left;
+    font-size: 30px;
+}
+#user section img:first-child{
+    width: 150px;
+    height: 150px;
+}
+
+
+#user section p:nth-child(2),
+#user section p:nth-child(3) {
+    background-color: #e6e4fa;
+    color: #5b4db8;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 15px;
+    margin: 2px 0;
+    display: inline-block;
+}
+
 
 
 
