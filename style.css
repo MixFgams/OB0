@@ -255,6 +255,38 @@ input:focus, textarea:focus {
     flex-direction: row ;
 }
 
+#deja-vu {
+    position: absolute ;
+    opacity: 0 ;
+    width : 0 ;
+    height : 0 ;
+}
+
+.checkmark {
+    width : 32px ;
+    height : 32px ;
+    border-radius: 6px;
+    background-color: white;
+    margin : 10px ;
+    margin-left : 0px ;
+}
+
+.checkmark-inside {
+    width : 24px ;
+    height : 24px ;
+    margin : 4px ;
+    border-radius: 6px ;
+    background-color: lightgray;
+}
+
+.checkmark-inside:hover {
+    background-color: grey;
+}
+
+.container input:checked ~ .checkmark-inside {
+    background-color: #2196F3;
+  }
+
 .pp-commentaire {
     border-radius: 100% ;
     max-height: 48px;

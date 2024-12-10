@@ -33,10 +33,13 @@
                 </div>
                 <div id="description-grid">
                     <div class="blue-box" id="collection">
-                        <div id="checkbox-grid">
-                            <input type="checkbox" id="deja-vu">
+                        <label id="checkbox-grid">
+                            <div class="checkmark">
+                                <input type="checkbox" id="deja-vu">
+                                <div class="checkmark-inside"></div>
+                            </div>
                             <p>Déjà Vu</p>
-                        </div>
+                        </label>
                         <p>Ajouter à une collection</p>
                         <button type="button" id="ajouter-collection">
                             AJOUTER
