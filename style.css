@@ -469,6 +469,7 @@ h2:hover {
 
 #user section{
     display:flex;
+    margin-right: 100px;
 }
 
 #user section h3:nth-child(1){
@@ -493,6 +494,13 @@ h2:hover {
     display: inline-block;
 }
 
+#user section img {
+    margin-right: 20px;
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
 
 
 
