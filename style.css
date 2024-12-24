@@ -7,12 +7,13 @@ body {
     font-family: 'Century Gothic', sans-serif;
 }
 
-main{
+main {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    width: 70%;
+    max-width: 1000px;
+    width: 100%;
     font-family: "Century Gothic";
 }
 
@@ -94,6 +95,13 @@ footer p#droits-footer {
     margin: 0.5em;
     font-style: italic;
     font-size: 0.8em;
+}
+
+@media (max-width: 1000px){
+    .header-nav a:not(:last-child) {
+        border-right: 2px solid #ccc; /* Séparateur */
+        padding-right: 10px; /* Espacement avant la bordure */
+    }
 }
 /*-------------------Fin Styles pour Header et Footer-------------------*/
 
@@ -339,15 +347,27 @@ input:focus, textarea:focus {
     align-self: flex-end;
     margin-top: auto;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 75%;
     cursor: pointer;
     margin-top: 20px;
 }
 
 .forums-container {
     display: grid;
-    grid-template-columns: repeat(2, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    gap: 1%;
+    position: relative;
+    width: 100%;
+    overflow: auto;
+}
+
+.forum-container::-webkit-scrollbar {
+    height: 6px;
+}
+
+.forum-container::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 3px;
 }
 
 .forum-item {
@@ -363,6 +383,7 @@ input:focus, textarea:focus {
 
 .forum-item img {
     width: 40%;
+    height: auto;
     border-radius: 8px;
 }
 
@@ -436,6 +457,15 @@ input:focus, textarea:focus {
     text-align: center;
     min-width: 150px;
     max-width: 200px;
+}
+
+
+@media (max-width: 1000px){
+    .forums-container {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(300px, 1fr));
+        gap: 20px;
+    }
 }
 
 /*------------------Profil-------------------------*/
