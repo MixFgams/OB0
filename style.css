@@ -576,6 +576,16 @@ h2:hover {
     object-fit: cover;
 }
 
+.invisible{
+    display:none;
+}
+.visible{
+    display:flex;
+}
+#noter{
+    width:100%
+}
+
 
 
 

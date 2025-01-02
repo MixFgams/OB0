@@ -3,7 +3,7 @@
     <head>
         <link rel="icon" href="img/obLogo.png   " type="image/x-icon">
         <link rel="stylesheet" href="style.css">
-        <script src="script.js"></script>
+
     </head>
 
     <body>
@@ -49,6 +49,15 @@
                         <h3>Description</h3>
                         <p id="description">test test test</p>
                     </div>
+                    <div id="noter">
+                        <button>Noter</button>
+                        <div class="invisible">
+                        <button id="moins">-</button>
+                        <p id="nbEtoile">0 etoiles</p>
+                        <button id="plus">+</button>
+                            <button id="envoie">Envoyer</button>
+                        </div>
+                    </div>
                 </div>
                 <h3>Commentaires</h3>
                 <div id="Commentaires">
@@ -86,6 +95,7 @@
             </section>
         </main>
         <script src="script.js"></script>
+        <script src="noter.js"></script>
     
         <?php include 'pagesOutils/footer.php'?>
     </body>
