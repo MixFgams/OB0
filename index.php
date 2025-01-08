@@ -33,8 +33,8 @@ include 'pagesOutils/header.php';
 
             // Requête SQL avec requête préparée
             $sql = "SELECT ContentID, name, description, production, director 
-                    FROM film 
-                    WHERE name LIKE :searchQuery";
+            FROM film 
+            WHERE name LIKE :searchQuery";
 
             $stmt = $pdo->prepare($sql);
             $stmt->execute(['searchQuery' => "%$searchQuery%"]);
@@ -44,13 +44,19 @@ include 'pagesOutils/header.php';
                 echo "<div class='recommendations-scrollable scrollable-content'>";
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     $id = $row['ContentID'];
+                    $name = htmlspecialchars($row["name"]);
+                    $description = htmlspecialchars($row["description"]);
+                    $production = htmlspecialchars($row["production"]);
+                    $director = htmlspecialchars($row["director"]);
+
+                    // Affichage de chaque film
                     echo "<div class='recommendation-card'>
-                          <h2 class='recommendation-title'>" . htmlspecialchars($row["name"]) . "</h2>
-                          <p class='recommendation-description'>" . htmlspecialchars($row["description"]) . "</p>
-                          <p class='recommendation-info'>Production : " . htmlspecialchars($row["production"]) . "</p>
-                          <p class='recommendation-info'>Réalisateur : " . htmlspecialchars($row["director"]) . "</p>
-                          <a class='recommendation-link' href='afficherFilm.php?id=$id'>Voir plus</a>
-                      </div>";
+                  <h2 class='recommendation-title'>$name</h2>
+                  <p class='recommendation-description'>$description</p>
+                  <p class='recommendation-info'>Production : $production</p>
+                  <p class='recommendation-info'>Réalisateur : $director</p>
+                  <a class='recommendation-link' href='afficherFilm.php?id=$id'>Voir plus</a>
+              </div>";
                 }
                 echo "</div>";
             } else {
@@ -58,6 +64,7 @@ include 'pagesOutils/header.php';
             }
         }
         ?>
+
     </section>
 
     <!-- Section Forums Populaires -->
