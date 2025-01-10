@@ -132,12 +132,31 @@ searchInput.addEventListener("input", () => {
 
                 if (data.length > 0) {
                     data.forEach(item => {
+                        // Conteneur pour chaque suggestion
                         const suggestion = document.createElement("div");
                         suggestion.classList.add("suggestion-item");
-                        suggestion.textContent = item.name;
+
+                        // Image
+                        const img = document.createElement("img");
+                        img.src = 'img/afficheFilm.jpg';
+                        img.alt = item.name;
+                        img.classList.add("suggestion-image");
+
+                        // Titre
+                        const text = document.createElement("span");
+                        text.textContent = item.name;
+                        text.classList.add("suggestion-text");
+
+                        // Ajout d'un événement de clic
                         suggestion.addEventListener("click", () => {
                             window.location.href = `catalogue.php?id=${item.ContentID}`;
                         });
+
+                        // Ajout de l'image et du texte au conteneur
+                        suggestion.appendChild(img);
+                        suggestion.appendChild(text);
+
+                        // Ajout de la suggestion au conteneur de la boîte
                         suggestionsBox.appendChild(suggestion);
                     });
                     suggestionsBox.style.display = "block"; // Afficher la boîte
@@ -145,6 +164,7 @@ searchInput.addEventListener("input", () => {
                     suggestionsBox.innerHTML = "<div class='suggestion-item'>Aucun résultat</div>";
                     suggestionsBox.style.display = "none";
                 }
+
             })
             .catch(error => console.error("Erreur lors de la recherche :", error));
     } else {

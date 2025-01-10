@@ -43,8 +43,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['message'])) {
         <div id="discussion">
             <?php
             // Récupération des messages depuis la base de données
-            $sql = "SELECT username, content, created_at FROM messages ORDER BY created_at DESC";
-            $result = $conn->query($sql);
+            try {
+                $sql = "SELECT username, content, created_at FROM messages ORDER BY created_at DESC";
+                $result = $conn->query($sql);
+            } catch (Exception $e) {
+                echo "<p>Aucun message pour le moment.</p>";
+                return;
+            }
 
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {

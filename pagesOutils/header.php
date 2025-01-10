@@ -37,6 +37,10 @@ if (isset($_GET['query']) && !empty($_GET['query'])) {
     <header>
         <nav class="header-nav">
             <a href="index.php"><img src="img/obLogo.png" alt="Logo OB"></a>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Rechercher un film...">
+                <div id="suggestions" class="suggestions-box"></div>
+            </div>
             <a href="index.php">Accueil</a>
             <a href="communaute.php">Communauté</a>
             <a href="catalogue.php">Catalogue</a>

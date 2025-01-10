@@ -130,41 +130,38 @@ footer p#droits-footer {
     }
 }
 
-/* Conteneur de recherche */
 .search-container {
     position: relative;
     width: 300px;
-    margin: 0 auto;
 }
 
-/* Champ de recherche */
 #searchInput {
-    width: 100%;
-    padding: 8px;
+    width: 300px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
 .suggestions-box {
-     display: none;
-     position: absolute;
-     top: 100%;
-     left: 0;
-     width: 100%;
-     border: 1px solid #ccc;
-     background-color: white;
-     max-height: 200px;
-     overflow-y: auto;
-     z-index: 9999;
-     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-     border-radius: 4px;
- }
+    display: none;
+    position: absolute; /* Position relative à .search-container */
+    top: calc(100% + 5px); /* Juste en dessous de l'input */
+    left: 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    background-color: white;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
 
-
-/* Élément de suggestion */
 .suggestion-item {
+    display: flex;
+    align-items: center; /* Aligner verticalement l'image et le texte */
     padding: 8px;
     cursor: pointer;
+    gap: 10px; /* Espacement entre l'image et le texte */
 }
 
 .suggestion-item:hover {
@@ -172,9 +169,17 @@ footer p#droits-footer {
 }
 
 
+.suggestion-image {
+    width: 40px; /* Largeur de l'image */
+    height: 60px; /* Hauteur de l'image */
+    border-radius: 4px; /* Coins arrondis pour l'image */
+    object-fit: cover; /* Maintenir le ratio de l'image */
+}
 
-
-
+.suggestion-text {
+    font-size: 16px;
+    color: #333;
+}
 
 /*-------------------Fin Styles pour Header et Footer-------------------*/
 
@@ -487,6 +492,10 @@ input:focus, textarea:focus {
     padding: 10px;
 }
 
+.recommendation-card{
+    width : 600px;
+}
+
 .recommendations-scrollable img{
     width: 24%;
     border-radius: 8px;
@@ -551,6 +560,14 @@ input:focus, textarea:focus {
 .Collection:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+#barreIndex {
+    text-align: center;
+}
+
+#barreIndex input {
+    width :500px;
 }
 
 @media (max-width: 1000px){
