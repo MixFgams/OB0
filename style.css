@@ -129,6 +129,53 @@ footer p#droits-footer {
         padding-right: 10px; /* Espacement avant la bordure */
     }
 }
+
+/* Conteneur de recherche */
+.search-container {
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+}
+
+/* Champ de recherche */
+#searchInput {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.suggestions-box {
+     display: none;
+     position: absolute;
+     top: 100%;
+     left: 0;
+     width: 100%;
+     border: 1px solid #ccc;
+     background-color: white;
+     max-height: 200px;
+     overflow-y: auto;
+     z-index: 9999;
+     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+     border-radius: 4px;
+ }
+
+
+/* Élément de suggestion */
+.suggestion-item {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+
+
+
+
+
 /*-------------------Fin Styles pour Header et Footer-------------------*/
 
 
@@ -227,6 +274,8 @@ input:focus, textarea:focus {
     outline: none;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+
 
 /*---------------------Connexion / Inscription---------------------*/
 /*c'etait un conflit avec le javasript, easy peasy*/

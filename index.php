@@ -1,8 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <link rel="icon" src="img/obLogo.png" type="image/x-icon">
+    <link rel="icon" href="img/obLogo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <title>Ob, Your hobbys in one place</title>
+    <style>
+        .search-container {
+            position: relative;
+            width: 300px;
+        }
+
+        #searchInput {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .suggestions-box {
+            display: none;
+            position: absolute; /* Position relative à .search-container */
+            top: calc(100% + 5px); /* Juste en dessous de l'input */
+            left: 0;
+            width: 100%;
+            border: 1px solid #ccc;
+            background-color: white;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 1000;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+        }
+
+
+        .suggestion-item {
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        .suggestion-item:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
 </head>
 <body>
 <?php
@@ -18,10 +57,26 @@ try {
 } catch (PDOException $e) {
     die("Erreur de connexion : " . $e->getMessage());
 }
-
-// Inclusion du fichier header
-include 'pagesOutils/header.php';
 ?>
+<header>
+    <nav class="header-nav">
+        <a href="index.php"><img src="img/obLogo.png" alt="Logo OB"></a>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Rechercher un film...">
+            <div id="suggestions" class="suggestions-box"></div>
+        </div>
+        <a href="index.php">Accueil</a>
+        <a href="communaute.php">Communauté</a>
+        <a href="catalogue.php">Catalogue</a>
+        <a href="aPropos.php">À propos</a>
+
+        <!--A mettre dans le cas ou l'utilisateur n'est pas connecté-->
+        <a href="connexion.php">Connexion</a>
+
+        <!--A mettre seulement si l'utilisateur est connecté-->
+        <a href="profile.php">Votre Profil</a>
+    </nav>
+</header>
 
 <main>
     <!-- Section Recherche -->
@@ -151,7 +206,8 @@ include 'pagesOutils/header.php';
 // Inclusion du fichier footer
 include 'pagesOutils/footer.php';
 ?>
-<script src="script.js"></script>
+<script src="script.js">
+</script>
 
 </body>
 </html>

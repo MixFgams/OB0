@@ -110,7 +110,58 @@ parentsAfficheRedirection.forEach(parent => {
 
 
 
+//-----------------------------------------------------------------------------------------------------------------------------------//
+//-------------------- Méthode pour afficher dynamiquement la barre de recherche              ---------------------------------------//
+//-----------------------------------------------------------------------------------------------------------------------------------//
+const searchInput = document.getElementById("searchInput");
+const suggestionsBox = document.getElementById("suggestions");
 
+searchInput.addEventListener("input", () => {
+    const query = searchInput.value.trim();
+
+    if (query.length > 0) {
+        fetch(`pagesOutils/header.php?query=${encodeURIComponent(query)}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Erreur réseau");
+                }
+                return response.json();
+            })
+            .then(data => {
+                suggestionsBox.innerHTML = ""; // Vider les suggestions précédentes
+
+                if (data.length > 0) {
+                    data.forEach(item => {
+                        const suggestion = document.createElement("div");
+                        suggestion.classList.add("suggestion-item");
+                        suggestion.textContent = item.name;
+                        suggestion.addEventListener("click", () => {
+                            window.location.href = `catalogue.php?id=${item.ContentID}`;
+                        });
+                        suggestionsBox.appendChild(suggestion);
+                    });
+                    suggestionsBox.style.display = "block"; // Afficher la boîte
+                } else {
+                    suggestionsBox.innerHTML = "<div class='suggestion-item'>Aucun résultat</div>";
+                    suggestionsBox.style.display = "none";
+                }
+            })
+            .catch(error => console.error("Erreur lors de la recherche :", error));
+    } else {
+        suggestionsBox.style.display = "none"; // Masquer la boîte si aucune requête
+    }
+});
+
+// Fermer la boîte si on clique ailleurs
+document.addEventListener("click", (event) => {
+    if (!event.target.closest(".search-container")) {
+        suggestionsBox.style.display = "none";
+    }
+});
+
+
+
+//-----------------------------------------------------------------------------------------------------------------------------------//
 
 
 
