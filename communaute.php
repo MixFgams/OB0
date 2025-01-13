@@ -5,34 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forum de la Communauté</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="cssExtraPages/forum.css">
 </head>
 <body>
+
 <?php
+// Inclusion du header
 include 'pagesOutils/header.php';
 
-// Connexion à la base de données
+// Connexion à la base de données avec PDO
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "ob";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Erreur de connexion : " . $conn->connect_error);
+try {
+    $pdo = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Erreur de connexion : " . $e->getMessage());
 }
 
+// Gestion des messages envoyés via le formulaire
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['message'])) {
-    $message = $conn->real_escape_string($_POST['message']);
-    $username = "Admin"; // quand farouk aura fait la connexion a enlever et mettre le vrai nom
+    $message = htmlspecialchars($_POST['message']);
+    $username = "Admin"; // Placeholder avant intégration du système d'authentification
 
-    $sql = "INSERT INTO messages (username, content) VALUES ('$username', '$message')";
+    $sql = "INSERT INTO messages (username, content) VALUES (:username, :content)";
+    $stmt = $pdo->prepare($sql);
 
-    if ($conn->query($sql) === TRUE) {
+    try {
+        $stmt->execute([':username' => $username, ':content' => $message]);
         echo "<p>Message envoyé avec succès.</p>";
-    } else {
-        echo "<p>Erreur : " . $conn->error . "</p>";
+    } catch (PDOException $e) {
+        echo "<p>Erreur lors de l'envoi du message : " . $e->getMessage() . "</p>";
     }
 }
 ?>
@@ -40,40 +45,93 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['message'])) {
 <main>
     <section id="forum">
         <h2>Forum de Discussion</h2>
+
+        <!-- Affichage des messages -->
         <div id="discussion">
             <?php
-            // Récupération des messages depuis la base de données
-            try {
-                $sql = "SELECT username, content, created_at FROM messages ORDER BY created_at DESC";
-                $result = $conn->query($sql);
-            } catch (Exception $e) {
-                echo "<p>Aucun message pour le moment.</p>";
-                return;
-            }
+            // Gestion de la pagination
+            $itemsPerPage = 10;
+            $page = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] : 1;
+            $offset = ($page - 1) * $itemsPerPage;
 
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    echo '<div class="message">';
-                    echo '<h3>' . htmlspecialchars($row['username']) . '</h3>';
-                    echo '<p>' . htmlspecialchars($row['content']) . '</p>';
-                    echo '<span>' . htmlspecialchars($row['created_at']) . '</span>';
-                    echo '</div>';
+            try {
+                // Requête pour récupérer les forums
+                $sql = "SELECT title, description FROM forum LIMIT :limit OFFSET :offset";
+                $stmt = $pdo->prepare($sql);
+                $stmt->bindValue(':limit', $itemsPerPage, PDO::PARAM_INT);
+                $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+                $stmt->execute();
+
+                $forums = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                // Requête pour compter le nombre total de forums
+                $totalItems = $pdo->query("SELECT COUNT(*) FROM forum")->fetchColumn();
+                $totalPages = ceil($totalItems / $itemsPerPage);
+
+                if (!empty($forums)) {
+                    foreach ($forums as $forum) {
+                        echo '<div class="Forum">';
+                        echo '<h3>' . htmlspecialchars($forum['title']) . '</h3>';
+                        echo '<p>' . htmlspecialchars($forum['description']) . '</p>';
+                        echo '</div>';
+                    }
+                } else {
+                    echo "<p>Aucun message pour le moment.</p>";
                 }
-            } else {
-                echo "<p>Aucun message pour le moment.</p>";
+            } catch (PDOException $e) {
+                echo "<p>Erreur lors de la récupération des forums : " . $e->getMessage() . "</p>";
             }
             ?>
         </div>
+
+        <!-- Formulaire pour ajouter un message -->
         <form method="post">
             <input name="message" type="text" placeholder="Écrivez votre message ici" required>
-            <input name="Envoyer" type="submit" value="Envoyer">
+            <input type="submit" value="Envoyer">
         </form>
     </section>
-    <script src="communaute.js"></script>
 
-    <?php
-    include 'pagesOutils/footer.php';
-    $conn->close();
-    ?>
+    <!-- Pagination -->
+    <ul class="pagination">
+        <!-- Numéros de page -->
+        <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+            <li>
+                <a href="?page=<?php echo $i; ?>" class="<?php echo $i === $page ? 'active' : ''; ?>">
+                    <?php echo $i; ?>
+                </a>
+            </li>
+        <?php endfor; ?>
+
+        <!-- Bouton Suivant -->
+        <?php if ($page < $totalPages): ?>
+            <li><a href="?page=<?php echo $page + 1; ?>">Suivant</a></li>
+        <?php else: ?>
+            <li><a class="disabled">Suivant</a></li>
+        <?php endif; ?>
+
+        <!-- Bouton Début -->
+        <?php if ($page > 1): ?>
+            <li><a href="?page=1">Début</a></li>
+        <?php else: ?>
+            <li><a class="disabled">Début</a></li>
+        <?php endif; ?>
+
+        <!-- Bouton Fin -->
+        <?php if ($page < $totalPages): ?>
+            <li><a href="?page=<?php echo $totalPages; ?>">Fin</a></li>
+        <?php else: ?>
+            <li><a class="disabled">Fin</a></li>
+        <?php endif; ?>
+    </ul>
+
+
+</main>
+
+<?php
+// Inclusion du footer
+include 'pagesOutils/footer.php';
+?>
+
+<script src="communaute.js"></script>
 </body>
 </html>
