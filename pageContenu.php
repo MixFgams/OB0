@@ -7,29 +7,46 @@
     </head>
 
     <body>
-        <?php include 'pagesOutils/header.php'?>
+        <?php include "pagesOutils/header.php" ;
+        include "pagesOutils/pdo.php" ;
+        $contentId = $_GET["contentId"] ;
+        $sql = "SELECT ContentID, `name`, `description`, releaseDate, director 
+                    FROM film 
+                    WHERE ContentID = ?";
 
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(1, $contentId, PDO::PARAM_INT) ;
+        $stmt->execute() ;
+        $content = $stmt->fetch(PDO::FETCH_ASSOC) ;
+        if (!$content) {?>
+            <section>
+                <h1>Contenu Inexistant</h1>
+                La page que vous cherchez n'existe pas
+            </section>
+        <?php }
+        else {
+            $content['type'] = "Film" ;
+        ?>
         <main>
             <section id="cadre-contenu">
                 <div id="contenu">
                     <div id="info-contenu">
-                        <?php //TODO remplacer les placeholders?>
                         <h3>Titre</h3>
-                        <p id="titre"></p>
+                        <p id="titre"><?php echo $content["name"] ?></p>
                         
                         <h3>Type de Contenu</h3>
-                        <p id="type-contenu"></p>
+                        <p id="type-contenu"><?php echo $content["type"] ?></p>
 
                         <h3>Date de Sortie</h3>
-                        <p id="date-sortie"></p>
+                        <p id="date-sortie"><?php echo $content["releaseDate"] ?></p>
 
                         <h3>Auteur</h3>
-                        <p id="auteur"></p>
+                        <p id="auteur"><?php echo $content["director"] ?></p>
 
                         <h3>Nombre total de volumes</h3>
                         <p id="nb-volumes"></p>
                     </div>
-                    <img src="./img/AizenBackground.png" alt="chouine" class="image-contenu">
+                    <img src="./img/naruto.jpg" alt="chouine" class="image-contenu">
                 </div>
                 <div id="description-grid">
                     <div class="blue-box" id="collection">
@@ -47,7 +64,7 @@
                     </div>
                     <div id="description-div">
                         <h3>Description</h3>
-                        <p id="description">test test test</p>
+                        <p id="description"><?php echo $content["description"] ?></p>
                     </div>
                     <div id="noter">
                         <button>Noter</button>
@@ -81,7 +98,7 @@
                                 </a>
                             </div>
                             <p class="commentaire-text">
-                                Il s'agirait peut-être de savoir coder
+                                Il s"agirait peut-être de savoir coder
                             </p>
                         </div>
                     </div>
@@ -94,9 +111,11 @@
                 <h2>Volumes</h2>
             </section>
         </main>
+        <?php
+        } ?>
         <script src="script.js"></script>
         <script src="noter.js"></script>
     
-        <?php include 'pagesOutils/footer.php'?>
+        <?php include "pagesOutils/footer.php"?>
     </body>
 </html>

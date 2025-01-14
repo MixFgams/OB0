@@ -249,6 +249,10 @@ input:focus, textarea:focus {
     margin-right : 5% ;
 }
 
+#info-contenu {
+    margin-left : 1% ;
+}
+
 #contenu {
     display : grid ;
     grid-template-columns: 50% 50% ;
@@ -259,11 +263,16 @@ input:focus, textarea:focus {
     color : #9B1C31 ;
 }
 
+#cadre-contenu p {
+    color : gray ;
+    text-align : right ;
+}
+
 #contenu img {
-    max-height : 100% ;
-    max-width : 100% ;
+    height : max-content ;
+    width: max-content ;
     padding : 5px ;
-    object-fit: cover ;
+    object-fit:cover;
 }
 
 
@@ -283,7 +292,12 @@ input:focus, textarea:focus {
     display : block ;
 }
 
-#description-grid, #checkbox-grid, #liste-commentaire, .commentaire-header {
+#description-grid {
+    display : grid ;
+    grid-template-columns: 25% 75%;
+}
+
+#checkbox-grid, #liste-commentaire, .commentaire-header {
     display:flex ;
     flex-wrap: wrap ;
     flex-direction: row ;
@@ -443,10 +457,10 @@ input:focus, textarea:focus {
     border-radius: 8px;
 }
 
-.SectionIndex img, .Collection{
+.SectionIndex img, .Collection, .catalogueImages {
     transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
-.SectionIndex img:hover, .Collection:hover {
+.SectionIndex img:hover, .Collection:hover, .catalogueImages:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     opacity: 0.8;
@@ -502,6 +516,46 @@ input:focus, textarea:focus {
 .Collection:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/*------------------Catalogue-------------------------*/
+
+#searchBarCatalogue {
+    height : fit-content ;
+}
+
+#searchBarCatalogue > input {
+    width : 80vw ;
+}
+
+#catalogue, .catalogueDisplay {
+    display : flex ;
+    flex-wrap : wrap ;
+}
+
+.catalogueDisplay {
+    width : 100vw ;
+}
+
+#catalogue main {
+    display : flex ;
+    flex-direction: row;
+    max-width : 95vw ;
+    margin : 1vw ;
+}
+
+#sortFilter {
+    max-height: fit-content;
+}
+
+.catalogueContent {
+    margin : 2% ;
+    max-width : 20% ;
+}
+
+.catalogueContent h3 {
+    height : 12% ;  
+    overflow : hidden ;
 }
 
 @media (max-width: 1000px){
@@ -585,6 +639,7 @@ h2:hover {
 #noter{
     width:100%
 }
+
 
 
 

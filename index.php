@@ -42,7 +42,7 @@ try {
 
                     // Affichage des résultats
                     if ($stmt->rowCount() > 0) {
-                        echo "<div class='recommendations-scrollable scrollable-content'>";
+                        echo "<div class='recommendations-scrollable scrollable-content content-image'>";
                         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                             $id = $row['ContentID'];
                             echo "<div class='recommendation-card'>
